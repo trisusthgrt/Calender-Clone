@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-	apiKey: 'AIzaSyDj6W-113mlv3bycEjK9fH4lvUI-Nn4VJM',
+	apiKey: '',
 	authDomain: 'calendar-clone-a2d2f.firebaseapp.com',
 	projectId: 'calendar-clone-a2d2f',
 	storageBucket: 'calendar-clone-a2d2f.appspot.com',
