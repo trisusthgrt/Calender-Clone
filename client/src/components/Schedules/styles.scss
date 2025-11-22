@@ -7,12 +7,12 @@
   }
 }
 
-/*** BUTTONS TO OPEN SCHEDUEL DIALOG***/
+
 .schedule__create-btn-wrapper {
   position: relative;
 }
 
-/*** SCHEDULE DIALOG ***/
+
 .schedule-dialog {
   padding: 1.5rem 2rem;
   color: $primary-color-font;
@@ -97,7 +97,7 @@
   }
 }
 
-/*** SCHEDULE INPUTS ***/
+
 [class^=schedule-input] {
   color: $primary-color-font;
 }
@@ -134,7 +134,7 @@
   border: 1px solid rgb(204, 204, 204);
 }
 
-/*** SCHEDULE VIEW ***/
+
 .calendar-schedule__view {
   display: flex;
   justify-content: space-between;

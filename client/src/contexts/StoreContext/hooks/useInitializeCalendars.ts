@@ -40,8 +40,6 @@ export function useInitializeCalendars(props: UseInitializeCalendarsProps) {
 			(!isCalendarsInitialized && isFetchedDataInitialized) &&
 			!hasCalendars) {
 
-			// Initialize the calendars with default ones if no documents were
-			// fetched from either cloud firestore or local storage
 			const initialCalendars: Array<Calendar> = [
 				{
 					id: uniqueID(),

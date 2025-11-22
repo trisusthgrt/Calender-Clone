@@ -5,7 +5,7 @@ import useComponentVisible from '../../hooks/useComponentVisible';
 import { ScheduleTypeList } from './Dialog';
 import Dialog from '../../lib/Dialog';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export default function withScheduleDialogToggle(Component: any) {
 	const wrappedComponent = () => {
 		const { recordPosition } = useAppConfigUpdater();

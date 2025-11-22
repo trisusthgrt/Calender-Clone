@@ -7,7 +7,7 @@ import {
 	useCalendarConfigUpdater,
 } from '../../contexts/CalendarConfigContext';
 
-// It controls the visibility of the schedule dialog
+
 export default function DialogController() {
 	const {
 		scheduleDialogRef,

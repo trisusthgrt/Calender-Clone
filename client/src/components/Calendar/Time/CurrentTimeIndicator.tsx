@@ -48,7 +48,7 @@ export function CurrentTimeIndicator({ parentHeight, date }: CurrentTimeIndicato
 		};
 	}, []);
 
-	// Hide the time indicator if the date is not "today"
+
 	if (date.format('YYYY-MM-DD') !== dayjs().format('YYYY-MM-DD')) {
 		return null;
 	}

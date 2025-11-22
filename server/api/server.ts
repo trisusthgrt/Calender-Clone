@@ -28,15 +28,15 @@ app.get('/api/:region', async function (req: Request, res: Response) {
 			auth: API_KEY,
 		});
 
-		// Set date range to fetch holidays for a wider period (5 years back and 5 years forward)
+		
 		const now = new Date();
-		const timeMin = new Date(now.getFullYear() - 5, 0, 1).toISOString(); // 5 years ago, January 1st
-		const timeMax = new Date(now.getFullYear() + 5, 11, 31).toISOString(); // 5 years ahead, December 31st
+		const timeMin = new Date(now.getFullYear() - 5, 0, 1).toISOString(); 
+		const timeMax = new Date(now.getFullYear() + 5, 11, 31).toISOString(); 
 
 		const allEvents: calendar_v3.Schema$Event[] = [];
 		let nextPageToken: string | undefined = undefined;
 
-		// Handle pagination to get ALL holidays (Google Calendar API returns max 2500 per page)
+		
 		do {
 			const holidayListParams: calendar_v3.Params$Resource$Events$List = {
 				calendarId: `${region || CALENDAR_REGION}#${CALENDAR_ID}`,
@@ -57,7 +57,7 @@ app.get('/api/:region', async function (req: Request, res: Response) {
 			nextPageToken = eventResults.nextPageToken || undefined;
 		} while (nextPageToken);
 
-		// Return all events combined
+	
 		const eventResults: calendar_v3.Schema$Events = {
 			items: allEvents,
 			summary: `Holidays for ${region || CALENDAR_REGION}`,

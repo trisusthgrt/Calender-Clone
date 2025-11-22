@@ -1,4 +1,4 @@
-/* eslint-disable max-lines-per-function */
+
 import { useEffect, useState } from 'react';
 
 import { UserAction } from '../../../contexts/StoreContext/index.model';
@@ -49,7 +49,6 @@ export default function HolidayCheckboxList() {
   useEffect(() => {
     const selectedRegionalHolidays = regionalHolidays.filter(rh => rh.selected);
 
-    // Add the calendar/events when a new regional holidays is toggled
     if (savedHolidayCalendars.length < selectedRegionalHolidays.length) {
       const newlyAddedRegion = selectedRegionalHolidays
         .filter(rh => !savedHolidayRegions.includes(rh.region))[0].region;
@@ -88,7 +87,7 @@ export default function HolidayCheckboxList() {
       return;
     }
 
-    // Remove the calendar/events when a new regional holidays is untoggled
+
     if (savedHolidayCalendars.length > selectedRegionalHolidays.length) {
       const newlyRemovedRegion = savedHolidayCalendars
         .filter(holidayCalendar => {

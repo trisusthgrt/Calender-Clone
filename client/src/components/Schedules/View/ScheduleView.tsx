@@ -79,7 +79,7 @@ export function ScheduleView(props: ScheduleViewProps) {
 		= calendars.find((calendar: Calendar) => calendar.id === calendarId);
 
 	useEffect(() => {
-		// Set the received schedule props as a selected schedule
+		
 		setSelectedSchedule((schedule: Schedule | null | undefined) => {
 			return schedule === null ? scheduleProps : { ...schedule, ...scheduleProps };
 		});

@@ -42,7 +42,7 @@ export default function EventBlock(props: ScheduleEventProps): JSX.Element {
 	const handleTimeChange = (option: Option | null, propName: string) => {
 		if (option) {
 			const { value } = option;
-			// Update time prop values on change
+			
 			setScheduleProps((scheduleProps: ScheduleStates) => ({
 				...scheduleProps,
 				dateTime: {
@@ -57,7 +57,7 @@ export default function EventBlock(props: ScheduleEventProps): JSX.Element {
 	};
 
 	const handleDateChange = (selectedDate: DateUnits) => {
-		// Update time prop values on change
+		
 		setScheduleProps((scheduleProps: ScheduleStates) => ({
 			...scheduleProps,
 			dateTime: {

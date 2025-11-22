@@ -52,14 +52,14 @@ export function convertExternalEventsToCalendar(props: ConvertExternalEventsToCa
 	}
 }
 
-// Helper function to extract location from organizer display name
+
 function extractLocation(organizer: { displayName?: string | null } | null | undefined): string {
 	if (!organizer?.displayName) return '';
 	const splitResult = organizer.displayName.split(' in ');
 	return splitResult.length > 1 ? splitResult[1].trim() : '';
 }
 
-// Helper function to format date to YYYYMMDD string
+
 function formatDateToString(dateObj: Date): string {
 	const year = dateObj.getFullYear();
 	const month = String(dateObj.getMonth() + 1).padStart(2, '0');
@@ -67,7 +67,7 @@ function formatDateToString(dateObj: Date): string {
 	return `${year}${month}${day}`;
 }
 
-// Helper function to parse and adjust holiday date (subtract 1 day)
+
 function parseHolidayDate(start: { date?: string | null; dateTime?: string | null } | undefined): string {
 	if (!start) return '';
 	
@@ -87,8 +87,7 @@ function parseHolidayDate(start: { date?: string | null; dateTime?: string | nul
 	return '';
 }
 
-// Extract values from holiday event properties and
-// set it as values for holiday schedule event
+
 export function convertExternalEventToSchedule(
 	externalEvent: ExternalHolidayEvent,
 ) {

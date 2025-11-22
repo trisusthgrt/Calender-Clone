@@ -45,9 +45,7 @@ export default function DateTimeBlock(props: DateTimeBlockProps) {
 		linkRef,
 	] = useComponentVisible();
 
-	// The purpose of this is to prevent date change after its first
-	// execution so that existing schedule date won't overwritten
-	// by the highlighted date
+	
 const dateChangeNotAllowed = useRef(true);
 	useEffect(() => {
 		if (dateChangeNotAllowed.current) {

@@ -38,9 +38,7 @@ export default function MiniCalendar(props: MiniCalendarProps): JSX.Element {
 	const [isInitialDateExistsAndNotUsed, setIsInitialDateExistsAndNotUsed]
 		= useState(!!initialDate);
 
-	// This ensures that the initialDate prop must be highlighted initially,
-	// only before the first change of date/day happens by clicking on the
-	// mini calendar day component
+
 	const highlightedDate = isInitialDateExistsAndNotUsed && isDateUnits(initialDate)
 		? initialDate : selectedDate;
 
@@ -84,7 +82,7 @@ export default function MiniCalendar(props: MiniCalendarProps): JSX.Element {
 		});
 	}
 
-	// Get event count for a date
+	
 	const getEventCount = (date: DateUnits): number => {
 		const dateString = convertDateUnitsToString(date);
 		return filteredSchedules.filter((schedule: Schedule) => {
@@ -92,7 +90,6 @@ export default function MiniCalendar(props: MiniCalendarProps): JSX.Element {
 		}).length;
 	}
 
-	// It returns a style modifier depending on the met conditions
 	const numericalDateModifier = ({ year, month, day }: DateUnits) => {
 		const isReceivedDateToday =
 			convertDateUnitsToString(dateToday) === convertDateUnitsToString({ year, month, day });

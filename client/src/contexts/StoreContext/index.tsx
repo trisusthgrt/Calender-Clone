@@ -37,7 +37,7 @@ export default function StoreProvider({ children }:
   const user = useFirebaseAuth();
   const [savedSchedules, dispatchSchedules] = useReducer(scheduleReducer, [])
   const [calendars, dispatchCalendars] = useReducer(calendarListReducer, []);
-  // If user is either null or User then the user is changed
+  
   const [status, setStatus] = useState<StoreModel.StoreStatus>(initialStatus);
 
   useInitializeCalendars({
@@ -108,15 +108,13 @@ export default function StoreProvider({ children }:
     }));
   }
 
-  // It monitor changes in the user object and set the isUserChanged 
-  // flag accordingly
+
   useEffect(() => {
     if (isInitial(user)) return;
     setStatus(prevStatus => ({ ...prevStatus, isUserChanged: true }));
   }, [user])
 
-  // It responds to user changes by resetting various statuses
-  // State user changes when the user signed out or signed in.
+
   useEffect(() => {
     if (!status.isUserChanged) return;
     setStatus(prevStatus => ({
@@ -127,8 +125,7 @@ export default function StoreProvider({ children }:
     }))
   }, [user])
 
-  // It handles data fetching and initialization based on user change and
-  // the first initialization of data when the user has accessed this website
+
   useEffect(() => {
     if (!status.isUserChanged) return;
     if (isUser(user)) {

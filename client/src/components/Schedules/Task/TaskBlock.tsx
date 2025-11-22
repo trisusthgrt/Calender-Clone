@@ -39,7 +39,7 @@ export default function TaskBlock(props: ScheduleTaskProps): JSX.Element {
 	};
 
 	const handleDateChange = (selectedDate: DateUnits) => {
-		// Update time prop values on change
+		
 		setScheduleProps((scheduleProps: ScheduleStates) => ({
 			...scheduleProps,
 			dateTime: {
